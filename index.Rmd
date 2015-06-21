@@ -1,6 +1,6 @@
 ---
 title       : Developing Data Products Course Project
-subtitle    : 
+subtitle    : Shiny APP for German Credit Data Analysis
 author      : Kuangyu Wang
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -13,14 +13,32 @@ knit        : slidify::knit2slides
 
 ## The Context
 
---- .class #id 
+* When a bank receives a loan application, based on the applicant’s profile the bank has to make a decision regarding whether to go ahead with the loan approval or not. Based on history records, there are two types of customers:
+    + Good applicant: pay on time and do not charge off
+    + Bad applicant: do not pay on time and/or charge off
+* The German Credit data set used comes from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/)
+
+```{r}
+library(caret)
+data(GermanCredit)
+summary(GermanCredit)
+```
+
+---
 
 ## The Problem
 
---- .class #id 
+
+
+---
 
 ## The Solution
 
---- .class #id 
+
+
+---
 
 ## The Shiny Application
+
+
+---
