@@ -240,7 +240,10 @@ summary(GermanCredit)
     <h2>The Problem</h2>
   </hgroup>
   <article data-timings="">
-    <p>hello</p>
+    <ul>
+<li>Credit decision is binary: approve or reject. However, it is up to the bank to decide how stringent the criteria would be. Just like FICO scores, some banks would accept people with score below 650, other banks would not</li>
+<li>The problem definition: enabling decision makers to explore different (probability) cutoffs and their potential impacts on prediction results</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -251,7 +254,23 @@ summary(GermanCredit)
     <h2>The Solution</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ol>
+<li>Build a model using logistic regression </li>
+<li>Calculate predicted probabilities of testing data</li>
+<li>Based on acceptance percentage (percentage of customers to allow credit access in a population), determine probability cutoff value</li>
+<li>Compute confusion matrix to show model performance at a specific cutoff</li>
+</ol>
+
+<pre><code class="r"># Random sample of 50% of row numbers created
+indexes = sample(1:nrow(GermanCredit), size=0.5*nrow(GermanCredit)) 
+Train50 &lt;- GermanCredit[indexes,]
+Test50 &lt;- GermanCredit[-indexes,]
+cvFit = cv.glmnet(data.matrix(Train50[!excludeVar]), Train50$Class, alpha=1, 
+                  standardize=FALSE, family=&#39;binomial&#39;,nfolds =5)
+Y_prob = predict(cvFit, newx = data.matrix(Test50[!excludeVar]), 
+                 type = &quot;response&quot;,s=cvFit$lambda.min)
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
