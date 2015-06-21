@@ -200,7 +200,7 @@ summary(GermanCredit)
 
 ## The Problem
 
-
+hello
 
 ---
 
@@ -211,6 +211,3 @@ summary(GermanCredit)
 ---
 
 ## The Shiny Application
-
-
----
