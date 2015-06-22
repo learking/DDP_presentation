@@ -11,6 +11,14 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
+<!-- Limit image width and height -->
+<style type='text/css'>
+img {
+    max-height: 400px;
+    max-width: 700px;
+}
+</style>
+
 ## The Context
 
 * When a bank receives a loan application, based on the applicant’s profile the bank has to make a decision regarding whether to go ahead with the loan approval or not. Based on history records, there are two types of customers:
@@ -227,3 +235,8 @@ Y_prob = predict(cvFit, newx = data.matrix(Test50[!excludeVar]),
 ---
 
 ## The Shiny Application
+
+* _Explore_ tab provides Mosaic plot as a way to visualize relationships between different variables. Here we can investigate the relationship between 'Good/Bad label' variable and other categorical variables
+* _Solution_ tab enables user to choose acceptance percentage in order to compare confusion matrices
+
+![](app.png)

@@ -42,11 +42,19 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>The Context</h2>
-  </hgroup>
   <article data-timings="">
-    <ul>
+    <!-- Limit image width and height -->
+
+<style type='text/css'>
+img {
+    max-height: 400px;
+    max-width: 700px;
+}
+</style>
+
+<h2>The Context</h2>
+
+<ul>
 <li>When a bank receives a loan application, based on the applicant’s profile the bank has to make a decision regarding whether to go ahead with the loan approval or not. Based on history records, there are two types of customers:
 
 <ul>
@@ -280,7 +288,13 @@ Y_prob = predict(cvFit, newx = data.matrix(Test50[!excludeVar]),
     <h2>The Shiny Application</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li><em>Explore</em> tab provides Mosaic plot as a way to visualize relationships between different variables. Here we can investigate the relationship between &#39;Good/Bad label&#39; variable and other categorical variables</li>
+<li><em>Solution</em> tab enables user to choose acceptance percentage in order to compare confusion matrices</li>
+</ul>
+
+<p><img src="app.png" alt=""></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -291,7 +305,7 @@ Y_prob = predict(cvFit, newx = data.matrix(Test50[!excludeVar]),
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='The Context'>
+        data-slide=1 title='NA'>
          1
       </a>
     </li>
